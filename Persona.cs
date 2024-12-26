@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WinFormsApp1.Datos;
 
 namespace WinFormsApp1;
 
@@ -15,7 +16,7 @@ public class Persona
 
     public Persona()
     {
-        id = 0;
+        id = PersonaDatos.Personas.Count + 1;
         Dni = 0;
         Name = "";
         Email = "";
@@ -23,7 +24,7 @@ public class Persona
 
     public Persona(int dni, string name, string email)
     {
-        id = 0;
+        id = PersonaDatos.Personas.Count + 1;
         Dni = dni;
         Name = name;
         Email = email;
