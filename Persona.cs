@@ -30,7 +30,17 @@ public class Persona
     }
 
     public long Id { get => id; }
-    public int Dni { get => dni; set => dni = value; }
+    public int Dni
+    {
+        get => dni; 
+        set
+        {
+            if (value >= 0)
+            {
+                dni = value;
+            }
+        }
+    }
     public string Name { get => name; set => name = value; }
     public string Email { get => email; set => email = value; }
 
