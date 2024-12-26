@@ -40,7 +40,6 @@
             name = new DataGridViewTextBoxColumn();
             email = new DataGridViewTextBoxColumn();
             personaBindingSource = new BindingSource(components);
-            textBox4 = new TextBox();
             button2 = new Button();
             listBox1 = new ListBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -80,7 +79,7 @@
             // 
             // label1
             // 
-            label1.Location = new Point(711, 247);
+            label1.Location = new Point(692, 201);
             label1.Name = "label1";
             label1.Size = new Size(550, 23);
             label1.TabIndex = 4;
@@ -92,11 +91,11 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, dni, name, email });
-            dataGridView1.Location = new Point(692, 322);
+            dataGridView1.Location = new Point(692, 271);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 56;
-            dataGridView1.Size = new Size(612, 206);
+            dataGridView1.Size = new Size(636, 206);
             dataGridView1.TabIndex = 5;
             // 
             // id
@@ -135,16 +134,6 @@
             // 
             personaBindingSource.DataSource = typeof(Persona);
             // 
-            // textBox4
-            // 
-            textBox4.Enabled = false;
-            textBox4.Location = new Point(702, 600);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(426, 240);
-            textBox4.TabIndex = 6;
-            textBox4.TabStop = false;
-            // 
             // button2
             // 
             button2.Location = new Point(260, 589);
@@ -158,9 +147,9 @@
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(622, 99);
+            listBox1.Location = new Point(692, 502);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(165, 119);
+            listBox1.Size = new Size(329, 119);
             listBox1.TabIndex = 8;
             // 
             // PersonaForm
@@ -170,7 +159,6 @@
             ClientSize = new Size(1900, 1029);
             Controls.Add(listBox1);
             Controls.Add(button2);
-            Controls.Add(textBox4);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             Controls.Add(button1);
@@ -195,7 +183,6 @@
         private Label label1;
         private DataGridView dataGridView1;
         private BindingSource personaBindingSource;
-        private TextBox textBox4;
         private Button button2;
         private ListBox listBox1;
         private DataGridViewTextBoxColumn id;
