@@ -39,11 +39,11 @@
             dni = new DataGridViewTextBoxColumn();
             name = new DataGridViewTextBoxColumn();
             email = new DataGridViewTextBoxColumn();
-            personaBindingSource = new BindingSource(components);
             button2 = new Button();
             listBox1 = new ListBox();
+            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)personaBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // textBox1
@@ -130,10 +130,6 @@
             email.ReadOnly = true;
             email.Width = 138;
             // 
-            // personaBindingSource
-            // 
-            personaBindingSource.DataSource = typeof(Persona);
-            // 
             // button2
             // 
             button2.Location = new Point(260, 589);
@@ -152,6 +148,10 @@
             listBox1.Size = new Size(329, 119);
             listBox1.TabIndex = 8;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // PersonaForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
@@ -169,7 +169,7 @@
             Text = "PersonaForm";
             WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)personaBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -182,12 +182,12 @@
         private Button button1;
         private Label label1;
         private DataGridView dataGridView1;
-        private BindingSource personaBindingSource;
         private Button button2;
         private ListBox listBox1;
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn dni;
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn email;
+        private ErrorProvider errorProvider1;
     }
 }

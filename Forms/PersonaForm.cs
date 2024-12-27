@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.Datos;
@@ -22,9 +23,36 @@ public partial class PersonaForm : Form
     private void button1_Click(object sender, EventArgs e)
     {
         Persona p = new Persona();
-        p.Dni = int.Parse(textBox1.Text);
+
+        int dni;
+        if(!int.TryParse(textBox1.Text, out dni))
+        {
+            //mostrar error
+            return;
+        }
+        if (dni <= 0)
+        {
+            //error
+            return;
+        }
+        p.Dni = dni;
+
+        if(textBox2.Text == "")
+        {
+            //error
+            return;
+        }
         p.Name = textBox2.Text;
+
+        if (!Regex.IsMatch(textBox3.Text,
+                    @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
+                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250)))
+        {
+            //error
+            return;
+        }
         p.Email = textBox3.Text;
+
         PersonaDatos.AddPersona(p);
 
         label1.Text = p.ToString();
