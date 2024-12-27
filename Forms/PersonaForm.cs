@@ -25,33 +25,28 @@ public partial class PersonaForm : Form
         Persona p = new Persona();
 
         int dni;
-        if(!int.TryParse(textBox1.Text, out dni))
+        if(!int.TryParse(textBox1.Text, out dni) || dni <= 0)
         {
-            //mostrar error
-            return;
-        }
-        if (dni <= 0)
-        {
-            //error
+            MessageBox.Show(ErrorMessage.DniIncorrecto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
         p.Dni = dni;
 
-        if(textBox2.Text == "")
+        if (textBox2.Text.Trim() == "")
         {
-            //error
+            MessageBox.Show(ErrorMessage.CompletarNombre, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
-        p.Name = textBox2.Text;
+        p.Name = textBox2.Text.Trim();
 
-        if (!Regex.IsMatch(textBox3.Text,
+        if (!Regex.IsMatch(textBox3.Text.Trim(),
                     @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
                     RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250)))
         {
-            //error
+            MessageBox.Show(ErrorMessage.EmailIncorrecto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
-        p.Email = textBox3.Text;
+        p.Email = textBox3.Text.Trim();
 
         PersonaDatos.AddPersona(p);
 

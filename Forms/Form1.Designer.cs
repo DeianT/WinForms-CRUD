@@ -38,6 +38,7 @@
             sub21ToolStripMenuItem = new ToolStripMenuItem();
             sub22ToolStripMenuItem = new ToolStripMenuItem();
             button3 = new Button();
+            button4 = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -126,6 +127,16 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // button4
+            // 
+            button4.Location = new Point(870, 580);
+            button4.Name = "button4";
+            button4.Size = new Size(103, 32);
+            button4.TabIndex = 6;
+            button4.Text = "button4";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
@@ -133,6 +144,7 @@
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1900, 1029);
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(label1);
@@ -161,5 +173,6 @@
         private ToolStripMenuItem sub21ToolStripMenuItem;
         private ToolStripMenuItem sub22ToolStripMenuItem;
         private Button button3;
+        private Button button4;
     }
 }

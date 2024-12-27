@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             textBox3 = new TextBox();
@@ -41,9 +40,7 @@
             email = new DataGridViewTextBoxColumn();
             button2 = new Button();
             listBox1 = new ListBox();
-            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // textBox1
@@ -148,10 +145,6 @@
             listBox1.Size = new Size(329, 119);
             listBox1.TabIndex = 8;
             // 
-            // errorProvider1
-            // 
-            errorProvider1.ContainerControl = this;
-            // 
             // PersonaForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
@@ -169,7 +162,6 @@
             Text = "PersonaForm";
             WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -188,6 +180,5 @@
         private DataGridViewTextBoxColumn dni;
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn email;
-        private ErrorProvider errorProvider1;
     }
 }
