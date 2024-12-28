@@ -40,6 +40,7 @@
             email = new DataGridViewTextBoxColumn();
             button2 = new Button();
             listBox1 = new ListBox();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -145,11 +146,22 @@
             listBox1.Size = new Size(329, 119);
             listBox1.TabIndex = 8;
             // 
+            // button3
+            // 
+            button3.Location = new Point(454, 499);
+            button3.Name = "button3";
+            button3.Size = new Size(103, 32);
+            button3.TabIndex = 9;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // PersonaForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1900, 1029);
+            Controls.Add(button3);
             Controls.Add(listBox1);
             Controls.Add(button2);
             Controls.Add(dataGridView1);
@@ -180,5 +192,6 @@
         private DataGridViewTextBoxColumn dni;
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn email;
+        private Button button3;
     }
 }

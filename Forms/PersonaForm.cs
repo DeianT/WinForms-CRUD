@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.Datos;
+using WinFormsApp1.Forms;
 
 namespace WinFormsApp1;
 
@@ -25,7 +26,7 @@ public partial class PersonaForm : Form
         Persona p = new Persona();
 
         int dni;
-        if(!int.TryParse(textBox1.Text, out dni) || dni <= 0)
+        if (!int.TryParse(textBox1.Text, out dni) || dni <= 0)
         {
             MessageBox.Show(ErrorMessage.DniIncorrecto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
@@ -75,5 +76,20 @@ public partial class PersonaForm : Form
     private void button2_Click(object sender, EventArgs e)
     {
         Close();
+    }
+
+    private void button3_Click(object sender, EventArgs e)
+    {
+        new EditarPersonaForm().ShowDialog();
+        ShowData();
+        return;
+        if (PersonaDatos.EditPersona(7, 23, "asda", "asdasd"))
+        {
+            ShowData();
+        }
+        else
+        {
+            MessageBox.Show("No se pudo realizar la operación", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }
