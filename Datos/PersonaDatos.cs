@@ -37,7 +37,7 @@ public static class PersonaDatos
         sr.Close();
     }
 
-    private static void Escribir(Persona persona)
+    private static void EscribirLinea(Persona persona)
     {
         FileStream fs = new FileStream(archivo, FileMode.Append);
         byte[] data = Encoding.Default.GetBytes(persona.ToCSV().ToCharArray());
@@ -45,9 +45,46 @@ public static class PersonaDatos
         fs.Close();
     }
 
+    private static void EscribirArchivo()
+    {
+        FileStream fs = new FileStream(archivo, FileMode.Create);
+        foreach (Persona persona in personas)
+        {
+            byte[] data = Encoding.Default.GetBytes(persona.ToCSV().ToCharArray());
+            fs.Write(data, 0, data.Length);
+        }
+        fs.Close();
+    }
+
     public static void AddPersona(Persona persona)
     {
         personas.Add(persona);
-        Escribir(persona);
+        EscribirLinea(persona);
+    }
+
+    public static bool EditPersona(int id, Persona newPersona)
+    {
+        if (id > personas.Count || id < 1)
+        {
+            return false;
+        }
+
+        return EditPersona(id, newPersona.Dni, newPersona.Name, newPersona.Email);
+    }
+
+    public static bool EditPersona(int id, int dni, string name, string email)
+    {
+        if (id > personas.Count || id < 1)
+        {
+            return false;
+        }
+
+        Persona persona = personas[id - 1];
+        persona.Dni = dni;
+        persona.Name = name;
+        persona.Email = email;
+        EscribirArchivo();
+
+        return true;
     }
 }
