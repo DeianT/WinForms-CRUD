@@ -9,7 +9,7 @@ namespace WinFormsApp1;
 
 public class Persona
 {
-    private long id;
+    private int id;
     private int dni;
     private string name;
     private string email;
@@ -30,7 +30,7 @@ public class Persona
         Email = email;
     }
 
-    public long Id { get => id; }
+    public int Id { get => id; }
     public int Dni
     {
         get => dni; 
