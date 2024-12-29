@@ -28,77 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             comboBox1 = new ComboBox();
-            personaBindingSource = new BindingSource(components);
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             textBox3 = new TextBox();
             button1 = new Button();
             button2 = new Button();
-            ((System.ComponentModel.ISupportInitialize)personaBindingSource).BeginInit();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             SuspendLayout();
             // 
             // comboBox1
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(270, 92);
+            comboBox1.Location = new Point(341, 274);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(166, 31);
+            comboBox1.Size = new Size(235, 31);
             comboBox1.TabIndex = 0;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
-            // personaBindingSource
-            // 
-            personaBindingSource.DataSource = typeof(Persona);
-            // 
             // textBox1
             // 
-            textBox1.Location = new Point(285, 204);
+            textBox1.Location = new Point(341, 384);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(138, 30);
+            textBox1.Size = new Size(235, 30);
             textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(286, 292);
+            textBox2.Location = new Point(341, 484);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(138, 30);
+            textBox2.Size = new Size(235, 30);
             textBox2.TabIndex = 2;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(285, 386);
+            textBox3.Location = new Point(341, 591);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(138, 30);
+            textBox3.Size = new Size(235, 30);
             textBox3.TabIndex = 3;
             // 
             // button1
             // 
-            button1.Location = new Point(228, 522);
+            button1.Location = new Point(283, 728);
             button1.Name = "button1";
             button1.Size = new Size(103, 32);
             button1.TabIndex = 4;
-            button1.Text = "button1";
+            button1.Text = "Guardar";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(446, 523);
+            button2.Location = new Point(521, 728);
             button2.Name = "button2";
             button2.Size = new Size(103, 32);
             button2.TabIndex = 5;
-            button2.Text = "button2";
+            button2.Text = "Cerrar";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
+            // 
+            // label4
+            // 
+            label4.Location = new Point(341, 556);
+            label4.Name = "label4";
+            label4.Size = new Size(235, 32);
+            label4.TabIndex = 15;
+            label4.Text = "Email";
+            label4.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label3
+            // 
+            label3.Location = new Point(341, 449);
+            label3.Name = "label3";
+            label3.Size = new Size(235, 32);
+            label3.TabIndex = 14;
+            label3.Text = "Nombre";
+            label3.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label2
+            // 
+            label2.Location = new Point(341, 349);
+            label2.Name = "label2";
+            label2.Size = new Size(235, 32);
+            label2.TabIndex = 13;
+            label2.Text = "DNI";
+            label2.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label1
+            // 
+            label1.Location = new Point(341, 239);
+            label1.Name = "label1";
+            label1.Size = new Size(235, 32);
+            label1.TabIndex = 16;
+            label1.Text = "Id";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // EditarPersonaForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1900, 1029);
+            Controls.Add(label1);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBox3);
@@ -108,7 +145,6 @@
             Name = "EditarPersonaForm";
             Text = "EditarPersonaForm";
             WindowState = FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)personaBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -116,11 +152,14 @@
         #endregion
 
         private ComboBox comboBox1;
-        private BindingSource personaBindingSource;
         private TextBox textBox1;
         private TextBox textBox2;
         private TextBox textBox3;
         private Button button1;
         private Button button2;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Label label1;
     }
 }

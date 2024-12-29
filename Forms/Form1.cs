@@ -26,10 +26,5 @@ namespace WinFormsApp1
         {
             new PersonaForm().Show();
         }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("asd", "asdasds", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2);
-        }
     }
 }

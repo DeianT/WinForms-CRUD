@@ -38,13 +38,12 @@
             sub21ToolStripMenuItem = new ToolStripMenuItem();
             sub22ToolStripMenuItem = new ToolStripMenuItem();
             button3 = new Button();
-            button4 = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(233, 61);
+            textBox1.Location = new Point(286, 72);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "asfafasfasasdddddddddddddddddddddddddddddddddddd";
@@ -55,7 +54,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(359, 192);
+            button1.Location = new Point(412, 203);
             button1.Name = "button1";
             button1.Size = new Size(103, 32);
             button1.TabIndex = 1;
@@ -65,7 +64,7 @@
             // 
             // label1
             // 
-            label1.Location = new Point(321, 284);
+            label1.Location = new Point(374, 295);
             label1.Name = "label1";
             label1.Size = new Size(194, 36);
             label1.TabIndex = 2;
@@ -74,11 +73,11 @@
             // button2
             // 
             button2.AutoSize = true;
-            button2.Location = new Point(722, 402);
+            button2.Location = new Point(134, 670);
             button2.Name = "button2";
             button2.Size = new Size(103, 33);
             button2.TabIndex = 3;
-            button2.Text = "button2";
+            button2.Text = "Cerrar";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
@@ -119,23 +118,13 @@
             // 
             // button3
             // 
-            button3.Location = new Point(319, 436);
+            button3.Location = new Point(412, 406);
             button3.Name = "button3";
-            button3.Size = new Size(103, 32);
+            button3.Size = new Size(103, 60);
             button3.TabIndex = 5;
-            button3.Text = "button3";
+            button3.Text = "Registro Personas";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(870, 580);
-            button4.Name = "button4";
-            button4.Size = new Size(103, 32);
-            button4.TabIndex = 6;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
             // 
             // Form1
             // 
@@ -144,7 +133,6 @@
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1900, 1029);
-            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(label1);
@@ -173,6 +161,5 @@
         private ToolStripMenuItem sub21ToolStripMenuItem;
         private ToolStripMenuItem sub22ToolStripMenuItem;
         private Button button3;
-        private Button button4;
     }
 }

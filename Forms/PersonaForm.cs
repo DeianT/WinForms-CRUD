@@ -50,6 +50,7 @@ public partial class PersonaForm : Form
         p.Email = textBox3.Text.Trim();
 
         PersonaDatos.AddPersona(p);
+        MessageBox.Show("Registrado con éxito", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
         label1.Text = p.ToString();
         ShowData();
@@ -83,13 +84,10 @@ public partial class PersonaForm : Form
         new EditarPersonaForm().ShowDialog();
         ShowData();
         return;
-        if (PersonaDatos.EditPersona(7, 23, "asda", "asdasd"))
-        {
-            ShowData();
-        }
-        else
-        {
-            MessageBox.Show("No se pudo realizar la operación", null, MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+    }
+
+    ~PersonaForm()
+    {
+        //personadatos.escribir()
     }
 }
