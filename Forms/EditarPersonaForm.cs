@@ -4,11 +4,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using WinFormsApp1.Datos;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace WinFormsApp1.Forms
 {
@@ -17,6 +20,15 @@ namespace WinFormsApp1.Forms
         public EditarPersonaForm()
         {
             InitializeComponent();
+            ListData();
+        }
+
+        private void ListData()
+        {
+            textBox1.Text = string.Empty;
+            textBox2.Text = string.Empty;
+            textBox3.Text = string.Empty;
+            comboBox1.Items.Clear();
             for (int i = 1; i <= PersonaDatos.Personas.Count; i++)
             {
                 comboBox1.Items.Add(i);
@@ -32,6 +44,11 @@ namespace WinFormsApp1.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show(ErrorMessage.NoSeleccionado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             int dni;
             if (!int.TryParse(textBox1.Text, out dni) || dni <= 0)
             {
@@ -58,8 +75,10 @@ namespace WinFormsApp1.Forms
             if (PersonaDatos.EditPersona(comboBox1.SelectedIndex + 1, dni, name, email))
             {
                 MessageBox.Show("Se han guardado los cambios", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                ListData();
             }
-            else{
+            else
+            {
                 MessageBox.Show("No se pudo realizar la operación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -67,6 +86,25 @@ namespace WinFormsApp1.Forms
         private void button2_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show(ErrorMessage.NoSeleccionado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (PersonaDatos.DeletePersona(comboBox1.SelectedIndex + 1))
+            {
+                MessageBox.Show("Se han guardado los cambios", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                ListData();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo realizar la operación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

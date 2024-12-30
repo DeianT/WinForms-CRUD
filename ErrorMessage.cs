@@ -7,6 +7,6 @@ public static class ErrorMessage
     public const string CamposIncompletos = "Complete los campos obligatorios",
                         DniIncorrecto = "Ingrese un DNI válido",
                         CompletarNombre = "Ingrese el nombre",
-                        EmailIncorrecto = "Ingrese una dirección de correo válida"
-                        ;
+                        EmailIncorrecto = "Ingrese una dirección de correo válida",
+                        NoSeleccionado = "Seleccione una opción";
 }

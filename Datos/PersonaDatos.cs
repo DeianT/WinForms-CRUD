@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Xml.Linq;
 
 namespace WinFormsApp1.Datos;
 
@@ -20,6 +23,7 @@ public static class PersonaDatos
 
     private static void LeerArchivo()
     {
+        personas.Clear();
         FileStream fsSource = new FileStream(archivo, FileMode.Open, FileAccess.Read);
         StreamReader sr = new StreamReader(fsSource);
         while (!sr.EndOfStream) //while ((s = sr.ReadLine()) != null)
@@ -84,6 +88,21 @@ public static class PersonaDatos
         persona.Name = name;
         persona.Email = email;
         EscribirArchivo();
+
+        return true;
+    }
+
+    public static bool DeletePersona(int id)
+    {
+        if (id > personas.Count || id < 1)
+        {
+            return false;
+        }
+
+        personas.Remove(personas[id - 1]);
+        
+        EscribirArchivo();
+        LeerArchivo();
 
         return true;
     }

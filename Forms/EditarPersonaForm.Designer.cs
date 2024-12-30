@@ -38,6 +38,8 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            button3 = new Button();
+            label5 = new Label();
             SuspendLayout();
             // 
             // comboBox1
@@ -83,7 +85,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(521, 728);
+            button2.Location = new Point(407, 849);
             button2.Name = "button2";
             button2.Size = new Size(103, 32);
             button2.TabIndex = 5;
@@ -127,11 +129,32 @@
             label1.Text = "Id";
             label1.TextAlign = ContentAlignment.TopCenter;
             // 
+            // button3
+            // 
+            button3.Location = new Point(522, 728);
+            button3.Name = "button3";
+            button3.Size = new Size(103, 32);
+            button3.TabIndex = 17;
+            button3.Text = "Eliminar";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(654, 277);
+            label5.Name = "label5";
+            label5.Size = new Size(55, 23);
+            label5.TabIndex = 18;
+            label5.Text = "label5";
+            // 
             // EditarPersonaForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1900, 1029);
+            Controls.Add(label5);
+            Controls.Add(button3);
             Controls.Add(label1);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -161,5 +184,7 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private Button button3;
+        private Label label5;
     }
 }
