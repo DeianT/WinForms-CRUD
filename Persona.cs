@@ -9,7 +9,7 @@ namespace WinFormsApp1;
 
 public class Persona
 {
-    private int id;
+    private readonly int id;
     private int dni;
     private string name;
     private string email;
@@ -50,6 +50,10 @@ public class Persona
         return Dni + " " + Name + " " + Email;
     }
 
+    /// <summary>
+    /// Devuelve los atributos del objeto en formato CSV.
+    /// </summary>
+    /// <returns>string con los atributos del objeto.</returns>
     public string ToCSV()
     {
         return $"{Id},{Dni},{Name},{Email}\n";

@@ -19,8 +19,14 @@ public static class PersonaDatos
         LeerArchivo();
     }
 
+    /// <summary>
+    /// Lista que contiene todas las personas registradas.
+    /// </summary>
     internal static List<Persona> Personas { get => personas; }
 
+    /// <summary>
+    /// Lee el archivo de personas linea por linea y carga las personas en una lista.
+    /// </summary>
     private static void LeerArchivo()
     {
         personas.Clear();
@@ -41,6 +47,10 @@ public static class PersonaDatos
         sr.Close();
     }
 
+    /// <summary>
+    /// Agrega una línea con los datos de una persona al final del archivo.
+    /// </summary>
+    /// <param name="persona">La persona cuyos datos se escribirán en el archivo</param>
     private static void EscribirLinea(Persona persona)
     {
         FileStream fs = new FileStream(archivo, FileMode.Append);
@@ -49,6 +59,9 @@ public static class PersonaDatos
         fs.Close();
     }
 
+    /// <summary>
+    /// Genera un archivo y escribe la lista completa de personas.
+    /// </summary>
     private static void EscribirArchivo()
     {
         FileStream fs = new FileStream(archivo, FileMode.Create);
@@ -60,12 +73,22 @@ public static class PersonaDatos
         fs.Close();
     }
 
+    /// <summary>
+    /// Agrega una persona a la lista y la escribe en el archivo.
+    /// </summary>
+    /// <param name="persona">La persona a agregar</param>
     public static void AddPersona(Persona persona)
     {
         personas.Add(persona);
         EscribirLinea(persona);
     }
 
+    /// <summary>
+    /// Modifica los atributos de una persona y actualiza el archivo (Requiere reescribirlo por completo)
+    /// </summary>
+    /// <param name="id">Id de la persona a editar.</param>
+    /// <param name="newPersona">Persona con los datos a actualizar.</param>
+    /// <returns>true si la Id existe, false si no existe</returns>
     public static bool EditPersona(int id, Persona newPersona)
     {
         if (id > personas.Count || id < 1)
@@ -76,6 +99,14 @@ public static class PersonaDatos
         return EditPersona(id, newPersona.Dni, newPersona.Name, newPersona.Email);
     }
 
+    /// <summary>
+    /// Modifica los atributos de una persona y actualiza el archivo (Requiere reescribirlo por completo)
+    /// </summary>
+    /// <param name="id">Id de la persona a editar.</param>
+    /// <param name="dni">Nuevo DNI de la persona.</param>
+    /// <param name="name">Nuevo nombre de la persona.</param>
+    /// <param name="email">Nuevo email de la persona.</param>
+    /// <returns>true si la Id existe, false si no existe</returns>
     public static bool EditPersona(int id, int dni, string name, string email)
     {
         if (id > personas.Count || id < 1)
@@ -92,6 +123,11 @@ public static class PersonaDatos
         return true;
     }
 
+    /// <summary>
+    /// Elimina una persona de la lista y reescribe el archivo.
+    /// </summary>
+    /// <param name="id">Id de la persona a eliminar.</param>
+    /// <returns>true si la Id existe, false si no existe</returns>
     public static bool DeletePersona(int id)
     {
         if (id > personas.Count || id < 1)
