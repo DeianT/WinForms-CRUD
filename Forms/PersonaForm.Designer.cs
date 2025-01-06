@@ -70,12 +70,13 @@
             // 
             // button1
             // 
+            button1.BackColor = SystemColors.Info;
             button1.Location = new Point(407, 589);
             button1.Name = "button1";
-            button1.Size = new Size(103, 32);
+            button1.Size = new Size(103, 60);
             button1.TabIndex = 3;
             button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // label1
@@ -90,6 +91,7 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.BackgroundColor = SystemColors.ControlLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, dni, name, email });
             dataGridView1.Location = new Point(935, 271);
@@ -133,12 +135,13 @@
             // 
             // button2
             // 
+            button2.BackColor = SystemColors.Info;
             button2.Location = new Point(172, 825);
             button2.Name = "button2";
-            button2.Size = new Size(103, 32);
+            button2.Size = new Size(103, 60);
             button2.TabIndex = 7;
             button2.Text = "Cerrar";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // listBox1
@@ -151,12 +154,13 @@
             // 
             // button3
             // 
+            button3.BackColor = SystemColors.Info;
             button3.Location = new Point(1468, 825);
             button3.Name = "button3";
-            button3.Size = new Size(103, 32);
+            button3.Size = new Size(103, 60);
             button3.TabIndex = 9;
             button3.Text = "Editar";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
             // label2
@@ -190,6 +194,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(1900, 1029);
             Controls.Add(label4);
             Controls.Add(label3);

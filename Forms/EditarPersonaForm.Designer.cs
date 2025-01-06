@@ -39,7 +39,6 @@
             label2 = new Label();
             label1 = new Label();
             button3 = new Button();
-            label5 = new Label();
             SuspendLayout();
             // 
             // comboBox1
@@ -75,22 +74,24 @@
             // 
             // button1
             // 
+            button1.BackColor = SystemColors.Info;
             button1.Location = new Point(283, 728);
             button1.Name = "button1";
-            button1.Size = new Size(103, 32);
+            button1.Size = new Size(103, 60);
             button1.TabIndex = 4;
             button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // button2
             // 
+            button2.BackColor = SystemColors.Info;
             button2.Location = new Point(407, 849);
             button2.Name = "button2";
-            button2.Size = new Size(103, 32);
+            button2.Size = new Size(103, 60);
             button2.TabIndex = 5;
             button2.Text = "Cerrar";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // label4
@@ -131,29 +132,21 @@
             // 
             // button3
             // 
+            button3.BackColor = SystemColors.Info;
             button3.Location = new Point(522, 728);
             button3.Name = "button3";
-            button3.Size = new Size(103, 32);
+            button3.Size = new Size(103, 60);
             button3.TabIndex = 17;
             button3.Text = "Eliminar";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(654, 277);
-            label5.Name = "label5";
-            label5.Size = new Size(55, 23);
-            label5.TabIndex = 18;
-            label5.Text = "label5";
             // 
             // EditarPersonaForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(1900, 1029);
-            Controls.Add(label5);
             Controls.Add(button3);
             Controls.Add(label1);
             Controls.Add(label4);
@@ -185,6 +178,5 @@
         private Label label2;
         private Label label1;
         private Button button3;
-        private Label label5;
     }
 }
